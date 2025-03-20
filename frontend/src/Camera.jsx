@@ -9,6 +9,7 @@ const CameraApp = () => {
   // Start the camera
   const startCamera = async () => {
     try {
+
       const stream = await navigator.mediaDevices.getUserMedia({ video: true });
       if (videoRef.current) {
         videoRef.current.srcObject = stream;
@@ -43,7 +44,7 @@ const CameraApp = () => {
 
       // Convert canvas image to base64 format
       const imageUrl = canvas.toDataURL("image/jpeg");
-    //   console.log(imageUrl)
+      //   console.log(imageUrl)
 
       try {
         // Send the base64 image to the FastAPI backend for mask detection
